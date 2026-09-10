@@ -237,12 +237,64 @@ footer {
     mix-blend-mode: multiply;
 }
 
-/* Infinite Scrolling Animation Keyframes */
-@keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(calc(-200px * 5)); /* Moves by width of 5 original slides */
-    }
+/* Clients Section Container */
+.clients-section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.clients-section h2 {
+    margin-bottom: 20px;
+}
+
+/* Horizontal Scroll Container */
+.clients-scroll-container {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    padding: 15px 10px;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+/* Individual Logo Card */
+.client-item {
+    flex: 0 0 auto;
+    width: 160px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scroll-snap-align: center;
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.client-item img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+}
+
+/* Custom Scrollbar Styling */
+.clients-scroll-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.clients-scroll-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.clients-scroll-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.clients-scroll-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
