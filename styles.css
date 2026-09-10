@@ -18,7 +18,7 @@ body {
 
 /* Hero / Header Container */
 .hero {
-    min-height: 75vh;
+    min-height: 60vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -28,9 +28,9 @@ body {
     background: linear-gradient(180deg, #d3e7f8 0%, #f4f8fb 100%);
 }
 
-/* Logo Sizing & Responsive Adjustment */
+/* Main Logo */
 .main-logo img {
-    max-width: 400px; /* Adjust size if needed */
+    max-width: 400px;
     width: 100%;
     height: auto;
     display: block;
@@ -38,10 +38,22 @@ body {
     object-fit: contain;
 }
 
-/* Horizontal Navigation Links */
+/* Individual Service Sub-Page Logo */
+.service-logo {
+    max-width: 150px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+    mix-blend-mode: multiply;
+}
+
+/* Navigation Links */
 .navigation {
     display: flex;
     gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .navigation a {
@@ -59,63 +71,28 @@ body {
 
 /* Content Sections */
 .content-section {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 60px 20px;
     border-top: 1px solid #e2e8f0;
 }
 
-.content-section h2 {
+.content-section h2, 
+.clients-section h2 {
     color: #0b3c5d;
     font-size: 2rem;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     text-align: center;
 }
 
 /* Services Grid & Cards */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* Forces exactly 5 equal columns in one row */
-    gap: 15px; /* Adjust spacing between cards if needed */
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
     width: 100%;
 }
 
-.card img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto 15px auto;
-    mix-blend-mode: multiply;
-    object-fit: contain;
-}
-
-.card img {
-    width: 180px; /* Forces a larger size */
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 0 15px 0; /* Align left with margin underneath */
-    mix-blend-mode: multiply; /* Removes the white background around the image */
-    background-color: transparent;
-}
-
-.card h3 {
-    color: #0b3c5d;
-    margin-bottom: 8px;
-}
-
-/* Contact Form Styling */
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    background: #ffffff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-
-/* Clickable Card Link Wrapper */
 .card-link {
     text-decoration: none;
     color: inherit;
@@ -123,221 +100,63 @@ body {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    height: 100%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
 .card-link:hover .card {
     transform: translateY(-4px);
     box-shadow: 0 6px 16px rgba(0,0,0,0.1);
-    cursor: pointer;
-}
-.form-group {
-    display: flex;
-    flex-direction: column;
 }
 
-.form-group label {
-    font-weight: bold;
-    margin-bottom: 6px;
-    color: #333;
-}
-
-.form-group input, 
-.form-group textarea {
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 1rem;
-}
-
-.btn-green {
-    background-color: #8cc63f;
-    color: #ffffff;
-    padding: 12px;
-    border: none;
-    border-radius: 25px;
-    font-weight: bold;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background 0.2s ease;
-}
-
-.btn-green:hover {
-    background-color: #7ab332;
-}
-
-/* Footer */
-footer {
-    background-color: #0d2a4a;
-    color: #ffffff;
-    text-align: center;
-    padding: 20px 10px;
-    font-size: 0.85rem;
-    font-weight: bold;
-    letter-spacing: 0.5px;
-}
-
-@media (max-width: 900px) {
-    .services-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-}
-
-/* Custom size for individual service sub-page logos */
-.service-logo {
-    max-width: 150px; /* Adjust this number to make it larger or smaller */
-    height: auto;
-    object-fit: contain;
-    display: block;
-    margin: 0 auto;
-    mix-blend-mode: multiply; /* Keeps background seamless if logo has a white backdrop */
-}
-
-/* Clients Section Styling */
-.clients-section {
-    padding: 40px 20px;
-    text-align: center;
-    overflow: hidden;
-}
-
-.clients-section h2 {
-    margin-bottom: 25px;
-}
-
-/* Slider Track & Animation */
-.slider {
-    height: 100px;
-    margin: auto;
-    position: relative;
+.card img {
+    max-width: 120px;
     width: 100%;
-    display: grid;
-    place-items: center;
-    overflow: hidden;
-}
-
-.slide-track {
-    display: flex;
-    width: calc(200px * 10); /* (Width of slide * Total number of slides) */
-    animation: scroll 20s linear infinite;
-}
-
-.slide-track:hover {
-    animation-play-state: paused; /* Pauses animation on hover */
-}
-
-.slide {
-    width: 200px;
-    padding: 0 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.slide img {
-    max-width: 100%;
-    max-height: 70px;
-    object-fit: contain;
+    height: auto;
+    display: block;
+    margin: 0 auto 15px auto;
     mix-blend-mode: multiply;
+    object-fit: contain;
 }
 
-/* Clients Section Container */
+.card h3 {
+    color: #0b3c5d;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 0.9rem;
+    color: #4a5568;
+}
+
+/* About Us Styling */
+.about-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.about-list li {
+    font-size: 1.05rem;
+    margin-bottom: 10px;
+}
+
+/* Our Clients Section */
 .clients-section {
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.clients-section h2 {
-    margin-bottom: 20px;
-}
-
-/* Horizontal Scroll Container */
-.clients-scroll-container {
-    display: flex;
-    gap: 30px;
-    overflow-x: auto;
-    padding: 15px 10px;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-}
-
-/* Individual Logo Card */
-.client-item {
-    flex: 0 0 auto;
-    width: 160px;
-    height: 90px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    scroll-snap-align: center;
-    background: #ffffff;
-    border-radius: 8px;
-    padding: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-}
-
-/* Center Section Alignment */
-.clients-section {
-    padding: 50px 20px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.clients-section h2 {
-    margin-bottom: 25px;
-}
-
-/* Single Logo Display Container */
-.single-client-carousel {
-    width: 250px; /* Fixed display width for one logo */
-    height: 120px;
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
-
-/* Sliding Track containing all 5 logos */
-.carousel-track {
-    display: flex;
-    width: calc(250px * 5); /* 1250px total width for 5 slides */
-    animation: slideSingle 15s infinite; /* Cycles through all 5 logos in 15 seconds */
-}
-
-/* Pause animation when user hovers over the logo */
-.single-client-carousel:hover .carousel-track {
-    animation-play-state: paused;
-}
-
-/* Individual Slide Dimensions */
-.carousel-slide {
-    width: 250px;
-    height: 120px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 15px;
-    box-sizing: border-box;
-}
-
-/* Center Section Alignment */
-.clients-section {
-    padding: 50px 20px;
+    padding: 60px 20px;
     text-align: center;
     overflow: hidden;
+    border-top: 1px solid #e2e8f0;
 }
 
-.clients-section h2 {
-    margin-bottom: 25px;
-}
-
-/* Outer Viewport Showing 1 Logo at a Time */
 .infinite-slider {
-    width: 250px; /* Displays exactly 1 logo at a time */
+    width: 250px; /* Fixed display box for 1 logo at a time */
     height: 120px;
     margin: 0 auto;
     overflow: hidden;
@@ -347,19 +166,16 @@ footer {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-/* Continuously Scrolling Track */
 .infinite-track {
     display: flex;
-    width: calc(250px * 10); /* 250px width * 10 total items (original + duplicate) */
+    width: calc(250px * 10); /* Total track width for 10 slides (original + duplicate) */
     animation: infiniteScroll 15s linear infinite;
 }
 
-/* Pause Scrolling on Hover */
 .infinite-slider:hover .infinite-track {
     animation-play-state: paused;
 }
 
-/* Individual Logo Slide Container */
 .client-slide {
     width: 250px;
     height: 120px;
@@ -378,12 +194,87 @@ footer {
     mix-blend-mode: multiply;
 }
 
-/* Smooth Linear Leftward Movement */
 @keyframes infiniteScroll {
     0% {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(calc(-250px * 5)); /* Shifts by the exact width of 5 logos */
+        transform: translateX(calc(-250px * 5)); /* Moves width of original 5 logos */
+    }
+}
+
+/* Contact Form Styling */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #333;
+    text-align: left;
+}
+
+.form-group input, 
+.form-group textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.btn-green {
+    background-color: #8cc63f;
+    color: #ffffff;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.btn-green:hover {
+    background-color: #7ab332;
+}
+
+.contact-info {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+/* Footer */
+footer {
+    background-color: #0d2a4a;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 900px) {
+    .services-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    
+    .navigation {
+        gap: 15px;
     }
 }
