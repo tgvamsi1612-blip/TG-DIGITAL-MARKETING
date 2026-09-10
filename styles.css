@@ -87,6 +87,15 @@ body {
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
+.card img {
+    max-width: 80px; /* Adjust size here: try 60px or 100px if needed */
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 15px auto;
+    object-fit: contain;
+}
+
 .card h3 {
     color: #0b3c5d;
     margin-bottom: 8px;
