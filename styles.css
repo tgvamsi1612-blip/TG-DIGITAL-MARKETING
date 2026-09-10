@@ -82,19 +82,20 @@ body {
 
 .card {
     background: #ffffff;
-    padding: 20px;
+    padding: 25px;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    text-align: left; /* Forces all card text and contents to align left */
 }
 
 .card img {
-    max-width: 150px; /* Increased size to make it bigger */
-    width: 100%;
+    width: 180px; /* Forces a larger size */
+    max-width: 100%;
     height: auto;
     display: block;
-    margin: 0 0 15px 0; /* Aligns image to the left side */
+    margin: 0 0 15px 0; /* Align left with margin underneath */
     mix-blend-mode: multiply; /* Removes the white background around the image */
-    object-fit: contain;
+    background-color: transparent;
 }
 
 .card h3 {
