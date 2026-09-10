@@ -179,3 +179,13 @@ footer {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
 }
+
+/* Custom size for individual service sub-page logos */
+.service-logo {
+    max-width: 150px; /* Adjust this number to make it larger or smaller */
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+    mix-blend-mode: multiply; /* Keeps background seamless if logo has a white backdrop */
+}
