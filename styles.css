@@ -273,30 +273,82 @@ footer {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-.client-item img {
+/* Center Section Alignment */
+.clients-section {
+    padding: 50px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.clients-section h2 {
+    margin-bottom: 25px;
+}
+
+/* Single Logo Display Container */
+.single-client-carousel {
+    width: 250px; /* Fixed display width for one logo */
+    height: 120px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Sliding Track containing all 5 logos */
+.carousel-track {
+    display: flex;
+    width: calc(250px * 5); /* 1250px total width for 5 slides */
+    animation: slideSingle 15s infinite; /* Cycles through all 5 logos in 15 seconds */
+}
+
+/* Pause animation when user hovers over the logo */
+.single-client-carousel:hover .carousel-track {
+    animation-play-state: paused;
+}
+
+/* Individual Slide Dimensions */
+.carousel-slide {
+    width: 250px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.carousel-slide img {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
-    mix-blend-mode: multiply;
-    text-align: center;
-    
+    mix-blend-mode: multiply; /* Keeps white backgrounds seamless */
 }
 
-/* Custom Scrollbar Styling */
-.clients-scroll-container::-webkit-scrollbar {
-    height: 8px;
-}
-
-.clients-scroll-container::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 10px;
-}
-
-.clients-scroll-container::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 10px;
-}
-
-.clients-scroll-container::-webkit-scrollbar-thumb:hover {
-    background: #555;
+/* Keyframe step animation for 5 logos (20% intervals) */
+@keyframes slideSingle {
+    0%, 16% {
+        transform: translateX(0); /* INIFD */
+    }
+    20%, 36% {
+        transform: translateX(-250px); /* NRI */
+    }
+    40%, 56% {
+        transform: translateX(-500px); /* images.jpg */
+    }
+    60%, 76% {
+        transform: translateX(-750px); /* Aurora */
+    }
+    80%, 96% {
+        transform: translateX(-1000px); /* Chitanya */
+    }
+    100% {
+        transform: translateX(0); /* Loop back to INIFD */
+    }
 }
