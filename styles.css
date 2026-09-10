@@ -147,7 +147,7 @@ body {
     margin-bottom: 10px;
 }
 
-/* --- OUR CLIENTS MULTI-LOGO BANNER --- */
+/* Clients Section Container */
 .clients-section {
     padding: 60px 20px;
     text-align: center;
@@ -155,10 +155,16 @@ body {
     border-top: 1px solid #e2e8f0;
 }
 
-/* Wide Container showing 4 to 5 logos across screen */
+.clients-section h2 {
+    color: #0b3c5d;
+    font-size: 2rem;
+    margin-bottom: 25px;
+}
+
+/* Full-width container to display all 5 logos at once */
 .infinite-slider {
     width: 100%;
-    max-width: 1000px;
+    max-width: 1200px; /* Expands wide enough to display all 5 logos side-by-side */
     height: 120px;
     margin: 0 auto;
     overflow: hidden;
@@ -168,19 +174,21 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-/* Continuous Scroll Track for 10 Items (5 original + 5 duplicate) */
+/* Track width sized for 10 slides (each takes 20% of the visible container width) */
 .infinite-track {
     display: flex;
-    width: calc(200px * 10); /* 2000px total length */
-    animation: multiLogoScroll 15s linear infinite;
+    width: 200%; /* 100% for first 5 logos + 100% for duplicate 5 logos */
+    animation: scrollAll 15s linear infinite;
 }
 
+/* Pause animation on hover */
 .infinite-slider:hover .infinite-track {
     animation-play-state: paused;
 }
 
+/* Each logo occupies exactly 10% of the total track (1/5th of the visible screen) */
 .client-slide {
-    width: 200px;
+    width: 10%; 
     height: 120px;
     display: flex;
     align-items: center;
@@ -197,16 +205,22 @@ body {
     mix-blend-mode: multiply;
 }
 
-/* Moves track left by the width of 5 logos (1000px) then seamlessly repeats */
-@keyframes multiLogoScroll {
+/* Smooth continuous scroll moving exactly 50% (the width of 5 logos) */
+@keyframes scrollAll {
     0% {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(-1000px);
+        transform: translateX(-50%);
     }
 }
 
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .client-slide {
+        width: 20%; /* Shows 2-3 logos at a time on mobile screens */
+    }
+}
 /* Contact Form Styling */
 .contact-form {
     display: flex;
