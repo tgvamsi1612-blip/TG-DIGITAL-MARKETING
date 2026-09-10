@@ -324,31 +324,66 @@ footer {
     box-sizing: border-box;
 }
 
-.carousel-slide img {
+/* Center Section Alignment */
+.clients-section {
+    padding: 50px 20px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.clients-section h2 {
+    margin-bottom: 25px;
+}
+
+/* Outer Viewport Showing 1 Logo at a Time */
+.infinite-slider {
+    width: 250px; /* Displays exactly 1 logo at a time */
+    height: 120px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Continuously Scrolling Track */
+.infinite-track {
+    display: flex;
+    width: calc(250px * 10); /* 250px width * 10 total items (original + duplicate) */
+    animation: infiniteScroll 15s linear infinite;
+}
+
+/* Pause Scrolling on Hover */
+.infinite-slider:hover .infinite-track {
+    animation-play-state: paused;
+}
+
+/* Individual Logo Slide Container */
+.client-slide {
+    width: 250px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+.client-slide img {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
-    mix-blend-mode: multiply; /* Keeps white backgrounds seamless */
+    mix-blend-mode: multiply;
 }
 
-/* Keyframe step animation for 5 logos (20% intervals) */
-@keyframes slideSingle {
-    0%, 16% {
-        transform: translateX(0); /* INIFD */
-    }
-    20%, 36% {
-        transform: translateX(-250px); /* NRI */
-    }
-    40%, 56% {
-        transform: translateX(-500px); /* images.jpg */
-    }
-    60%, 76% {
-        transform: translateX(-750px); /* Aurora */
-    }
-    80%, 96% {
-        transform: translateX(-1000px); /* Chitanya */
+/* Smooth Linear Leftward Movement */
+@keyframes infiniteScroll {
+    0% {
+        transform: translateX(0);
     }
     100% {
-        transform: translateX(0); /* Loop back to INIFD */
+        transform: translateX(calc(-250px * 5)); /* Shifts by the exact width of 5 logos */
     }
 }
