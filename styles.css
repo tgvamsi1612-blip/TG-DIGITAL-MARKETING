@@ -88,11 +88,13 @@ body {
 }
 
 .card img {
-    max-width: 100px; /* Adjust size here: try 60px or 100px if needed */
+    max-width: 150px; /* Increased size to make it bigger */
     width: 100%;
     height: auto;
     display: block;
-    margin: 0 auto 15px auto;
+    margin: 0 0 15px 0; /* Aligns image to the left side */
+    mix-blend-mode: multiply; /* Removes the white background around the image */
+    object-fit: contain;
 }
 
 .card h3 {
