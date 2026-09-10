@@ -1,0 +1,129 @@
+/* General Reset & Page Setup */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Enables smooth sliding when clicking menu links */
+}
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    background-color: #f4f8fb;
+    color: #1a202c;
+    line-height: 1.6;
+}
+
+/* Landing / Hero Container */
+.hero-container {
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(180deg, #dceeff 0%, #f4f8fb 100%);
+}
+
+.main-logo {
+    max-width: 360px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 35px;
+}
+
+/* Navigation Menu */
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #0d2a4a;
+    font-weight: 700;
+    font-size: 1.15rem;
+    transition: color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+}
+
+.nav-links a:hover {
+    color: #007adb;
+    transform: translateY(-2px);
+}
+
+/* Content Sections */
+section {
+    padding: 80px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-top: 1px solid #e2e8f0;
+}
+
+section h2 {
+    color: #0d2a4a;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+/* Form Styles */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #2d3748;
+}
+
+.form-group input, 
+.form-group textarea {
+    padding: 12px;
+    border: 1px solid #cbd5e0;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.btn-green {
+    background-color: #8cc63f;
+    color: #ffffff;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-green:hover {
+    background-color: #7ab332;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #0b3c5d;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
