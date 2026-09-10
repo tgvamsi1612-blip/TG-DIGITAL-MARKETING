@@ -189,3 +189,60 @@ footer {
     margin: 0 auto;
     mix-blend-mode: multiply; /* Keeps background seamless if logo has a white backdrop */
 }
+
+/* Clients Section Styling */
+.clients-section {
+    padding: 40px 20px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.clients-section h2 {
+    margin-bottom: 25px;
+}
+
+/* Slider Track & Animation */
+.slider {
+    height: 100px;
+    margin: auto;
+    position: relative;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+.slide-track {
+    display: flex;
+    width: calc(200px * 10); /* (Width of slide * Total number of slides) */
+    animation: scroll 20s linear infinite;
+}
+
+.slide-track:hover {
+    animation-play-state: paused; /* Pauses animation on hover */
+}
+
+.slide {
+    width: 200px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide img {
+    max-width: 100%;
+    max-height: 70px;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+}
+
+/* Infinite Scrolling Animation Keyframes */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-200px * 5)); /* Moves by width of 5 original slides */
+    }
+}
