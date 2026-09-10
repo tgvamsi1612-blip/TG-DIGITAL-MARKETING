@@ -88,12 +88,11 @@ body {
 }
 
 .card img {
-    max-width: 80px; /* Adjust size here: try 60px or 100px if needed */
+    max-width: 100px; /* Adjust size here: try 60px or 100px if needed */
     width: 100%;
     height: auto;
     display: block;
     margin: 0 auto 15px auto;
-    object-fit: contain;
 }
 
 .card h3 {
