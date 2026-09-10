@@ -30,10 +30,12 @@ body {
 
 /* Logo Sizing & Responsive Adjustment */
 .main-logo img {
-    max-width: 360px;
+    max-width: 400px; /* Adjust size if needed */
     width: 100%;
     height: auto;
-    margin-bottom: 25px;
+    display: block;
+    margin: 0 auto 25px auto;
+    object-fit: contain;
 }
 
 /* Horizontal Navigation Links */
