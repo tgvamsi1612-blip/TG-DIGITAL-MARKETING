@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request a Quote - TG Digital Marketing</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="hero" style="min-height: 40vh;">
+        <div class="main-logo">
+            <a href="index.html"><img src="mylogo1.png" alt="TG Digital Marketing Logo"></a>
+        </div>
+        <nav class="navigation">
+            <a href="index.html#home">Home</a>
+            <a href="index.html#services">Services</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="index.html#about">About US</a>
+        </nav>
+    </header>
+
+    <main class="content-section">
+        <h2>Request a Custom Quote</h2>
+        <p style="text-align: center; margin-bottom: 30px;">Fill out the form below with your project details, and our team will get back to you with a tailored strategy and pricing.</p>
+
+        <!-- Formspree Integration -->
+        <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="contact-form">
+            <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" required placeholder="Enter your full name">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Business Email *</label>
+                <input type="email" id="email" name="email" required placeholder="name@company.com">
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your mobile number">
+            </div>
+
+            <div class="form-group">
+                <label for="services">Services Required *</label>
+                <select id="services" name="services" required style="padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem;">
+                    <option value="" disabled selected>Select a service</option>
+                    <option value="SEO & Search Marketing">SEO & Search Marketing</option>
+                    <option value="Branding & Creative Design">Branding & Creative Design</option>
+                    <option value="Google & Paid Advertising">Google & Paid Advertising</option>
+                    <option value="Full Digital Marketing Package">Full Digital Marketing Package</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="budget">Estimated Monthly Budget</label>
+                <select id="budget" name="budget" style="padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem;">
+                    <option value="Under ₹10,000">Under ₹10,000</option>
+                    <option value="₹10,000 - ₹25,000">₹10,000 - ₹25,000</option>
+                    <option value="₹25,000 - ₹50,000">₹25,000 - ₹50,000</option>
+                    <option value="₹50,000+">₹50,000+</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="details">Project Details / Goals *</label>
+                <textarea id="details" name="details" rows="5" required placeholder="Tell us about your business, goals, or current website..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-green">Submit Quotation Request</button>
+        </form>
+    </main>
+
+    <footer>
+        © COPYRIGHT 2026 TG DIGITALMARKETING.IN ALL RIGHTS RESERVED.
+    </footer>
+
+</body>
+</html>
