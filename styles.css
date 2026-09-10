@@ -147,7 +147,7 @@ body {
     margin-bottom: 10px;
 }
 
-/* Our Clients Section */
+/* --- OUR CLIENTS MULTI-LOGO BANNER --- */
 .clients-section {
     padding: 60px 20px;
     text-align: center;
@@ -155,10 +155,10 @@ body {
     border-top: 1px solid #e2e8f0;
 }
 
-/* Expanded Viewport to show 3 to 5 logos at once (Desktop: 1000px max) */
+/* Wide Container showing 4 to 5 logos across screen */
 .infinite-slider {
     width: 100%;
-    max-width: 1000px; /* Shows ~4 to 5 logos across the screen */
+    max-width: 1000px;
     height: 120px;
     margin: 0 auto;
     overflow: hidden;
@@ -168,19 +168,17 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-/* Extended Track containing both sets of 5 logos (10 total slides) */
+/* Continuous Scroll Track for 10 Items (5 original + 5 duplicate) */
 .infinite-track {
     display: flex;
-    width: calc(200px * 10); /* 2000px total width */
-    animation: multiLogoScroll 18s linear infinite;
+    width: calc(200px * 10); /* 2000px total length */
+    animation: multiLogoScroll 15s linear infinite;
 }
 
-/* Pause Scrolling on Hover */
 .infinite-slider:hover .infinite-track {
     animation-play-state: paused;
 }
 
-/* Individual Logo Slide Container */
 .client-slide {
     width: 200px;
     height: 120px;
@@ -199,13 +197,13 @@ body {
     mix-blend-mode: multiply;
 }
 
-/* Smooth Infinite Scroll Animation */
+/* Moves track left by the width of 5 logos (1000px) then seamlessly repeats */
 @keyframes multiLogoScroll {
     0% {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(calc(-200px * 5)); /* Moves by exact width of 5 original logos */
+        transform: translateX(-1000px);
     }
 }
 
@@ -282,5 +280,9 @@ footer {
     
     .navigation {
         gap: 15px;
+    }
+    
+    .infinite-slider {
+        max-width: 100%;
     }
 }
