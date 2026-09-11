@@ -18,15 +18,29 @@
             grid-column: span 2;
         }
 
-        .contact-form select {
-            padding: 12px;
+        .contact-form select,
+        .contact-form input,
+        .contact-form textarea {
+            width: 100% !important;
+            box-sizing: border-box !important;
+            padding: 14px;
             background-color: var(--bg-dark);
             border: 1px solid var(--border-dark);
             border-radius: 6px;
             font-size: 1rem;
             color: var(--text-white);
-            width: 100%;
-            box-sizing: border-box;
+            outline: none;
+            font-family: inherit;
+        }
+
+        .contact-form select:focus,
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: var(--accent-green);
+        }
+
+        .contact-form textarea {
+            resize: vertical;
         }
 
         /* Mobile Alignment Override */
