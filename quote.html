@@ -3,309 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Get a Quote - TG Digital Marketing</title>
-    <link rel="icon" href="mylogo1.png" type="image/png">
-    
-    <style>
-        /* Global Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: #0b132b;
-            color: #ffffff;
-            line-height: 1.6;
-        }
-
-        /* Header Navigation */
-        header {
-            background-color: #1c2541;
-            padding: 15px 5%;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        /* Shortened Main Logo */
-        .logo-link img {
-            height: 30px;
-            width: auto;
-            display: block;
-            object-fit: contain;
-        }
-
-        nav a {
-            color: #ffffff;
-            text-decoration: none;
-            margin-left: 20px;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: #70e000;
-        }
-
-        .btn-get-started {
-            background-color: #70e000;
-            color: #0b132b !important;
-            padding: 8px 18px;
-            border-radius: 5px;
-            font-weight: bold;
-        }
-
-        .btn-get-started:hover {
-            background-color: #5bb300;
-        }
-
-        /* Container Alignment */
-        .container {
-            max-width: 800px;
-            margin: 40px auto 80px auto;
-            padding: 0 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        /* Centered Quote Section */
-        .quote-section {
-            background-color: #1c2541;
-            border-left: 5px solid #70e000;
-            width: 100%;
-            margin-bottom: 35px;
-            padding: 30px 35px;
-            border-radius: 8px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-            text-align: center;
-        }
-
-        .quote-section blockquote {
-            font-size: 1.2rem;
-            font-style: italic;
-            color: #ffffff;
-            line-height: 1.7;
-            margin-bottom: 15px;
-        }
-
-        .quote-section cite {
-            display: block;
-            font-size: 0.95rem;
-            font-weight: bold;
-            color: #70e000;
-            font-style: normal;
-        }
-
-        /* Form Container */
-        .quote-form-card {
-            background-color: #1c2541;
-            padding: 40px;
-            border-radius: 10px;
-            width: 100%;
-            border: 1px solid #2a385b;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-            text-align: center;
-        }
-
-        .quote-form-card h2 {
-            color: #70e000;
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-
-        .quote-form-card p {
-            color: #c0c6d4;
-            margin-bottom: 30px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-            text-align: left;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            color: #ffffff;
-            font-weight: 500;
-            font-size: 0.95rem;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border-radius: 6px;
-            border: 1px solid #2a385b;
-            background-color: #0b132b;
-            color: #ffffff;
-            font-size: 1rem;
-            outline: none;
-            transition: border-color 0.3s;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            border-color: #70e000;
-        }
-
-        /* Grid for side-by-side inputs */
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .btn-submit {
-            background-color: #70e000;
-            color: #0b132b;
-            padding: 14px 35px;
-            font-size: 1rem;
-            font-weight: bold;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            width: 100%;
-            margin-top: 10px;
-            transition: background-color 0.3s, transform 0.2s;
-        }
-
-        .btn-submit:hover {
-            background-color: #5bb300;
-            transform: translateY(-2px);
-        }
-
-        /* Footer */
-        footer {
-            background-color: #070b19;
-            text-align: center;
-            padding: 20px;
-            font-size: 0.85rem;
-            color: #7a8296;
-            border-top: 1px solid #1c2541;
-        }
-
-        @media (max-width: 768px) {
-            .form-row { grid-template-columns: 1fr; }
-            .quote-form-card { padding: 25px; }
-            .logo-link img { height: 26px; }
-        }
-    </style>
+    <link rel="icon" type="image/png" href="mylogo1.png">
+    <title>Request a Quote - TG Digital Marketing</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <!-- Header Navigation -->
-    <header>
+    <!-- Sticky Navigation Header -->
+    <header class="navbar">
         <div class="nav-container">
             <a href="index.html#home" class="logo-link">
-                <img src="mylogo1.png" alt="TG Digital Marketing Logo">
+                <img src="mylogo1.png" alt="TG Digital Marketing Logo" class="nav-logo">
             </a>
-            <nav>
+            <nav class="nav-links">
                 <a href="index.html#home">Home</a>
                 <a href="index.html#services">Services</a>
                 <a href="index.html#ourclients">Our Clients</a>
                 <a href="index.html#about">About Us</a>
                 <a href="index.html#contact">Contact</a>
-                <a href="index.html#contact" class="btn-get-started">Get Started</a>
+                <a href="quote.html" class="btn-green nav-cta">Get a Quote</a>
             </nav>
         </div>
     </header>
 
-    <!-- Main Container -->
-    <div class="container">
-        
-        <!-- Centered Quote Box -->
-        <div class="quote-section">
-            <blockquote>
-                "Marketing is no longer about the stuff that you make, but about the stories you tell and the value you deliver."
-            </blockquote>
-            <cite>— TG Digital Marketing</cite>
-        </div>
+    <!-- Subpage Hero Header -->
+    <section class="subpage-hero">
+        <h1 class="hero-title">Request a <span class="highlight">Custom Quote</span></h1>
+        <p class="hero-description">
+            Tell us about your project goals and requirements. Fill out the form below to receive a personalized digital marketing proposal tailored for your business.
+        </p>
+    </section>
 
-        <!-- Quote Form with Budget & Preferred Payment Mode -->
-        <div id="contact" class="quote-form-card">
-            <h2>Request Your Customized Quote</h2>
-            <p>Fill in your details, budget, and payment preference below to receive a personalized proposal.</p>
+    <!-- Quote Form Section -->
+    <section class="content-section">
+        <form action="https://formspree.io/f/xyeybvej" method="POST" class="contact-form">
             
-            <form action="#" method="POST">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="fullname">Full Name</label>
-                        <input type="text" id="fullname" name="fullname" placeholder="Enter your name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                    </div>
-                </div>
+            <div class="form-group">
+                <label for="quote-name">Full Name *</label>
+                <input type="text" id="quote-name" name="name" placeholder="John Doe" required>
+            </div>
 
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" placeholder="Enter your mobile number" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="service">Select Service</label>
-                        <select id="service" name="service" required>
-                            <option value="" disabled selected>Select a service</option>
-                            <option value="smo">Social Media Optimization (SMO)</option>
-                            <option value="seo">Search Engine Optimization (SEO)</option>
-                            <option value="gpa">Google PPC & Ads</option>
-                            <option value="bcd">Branding & Creative Design</option>
-                            <option value="pm">Performance Marketing</option>
-                        </select>
-                    </div>
-                </div>
+            <div class="form-group">
+                <label for="quote-email">Email Address *</label>
+                <input type="email" id="quote-email" name="email" placeholder="john@example.com" required>
+            </div>
 
-                <!-- Budget & Payment Mode Row -->
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="budget">Let us know your Budget</label>
-                        <select id="budget" name="budget" required>
-                            <option value="" disabled selected>Select your budget range</option>
-                            <option value="below-15k">Under ₹15,000 / month</option>
-                            <option value="15k-30k">₹15,000 - ₹30,000 / month</option>
-                            <option value="30k-50k">₹30,000 - ₹50,000 / month</option>
-                            <option value="50k-plus">₹50,000+ / month</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="payment-mode">Preferred Payment Mode</label>
-                        <select id="payment-mode" name="payment_mode" required>
-                            <option value="" disabled selected>Select Payment Option</option>
-                            <option value="upi">UPI (GPay / PhonePe / Paytm)</option>
-                            <option value="card">Credit / Debit Card</option>
-                            <option value="netbanking">Net Banking</option>
-                            <option value="wire">Bank Wire Transfer</option>
-                        </select>
-                    </div>
-                </div>
+            <div class="form-group">
+                <label for="quote-phone">Mobile / Phone Number *</label>
+                <input type="tel" id="quote-phone" name="phone" pattern="[+0-9\s\-]+" placeholder="+91 00000 00000" required>
+            </div>
 
-                <div class="form-group">
-                    <label for="message">Project Requirements / Notes</label>
-                    <textarea id="message" name="message" rows="4" placeholder="Briefly describe your goals or requirements..."></textarea>
-                </div>
+            <div class="form-group">
+                <label for="quote-company">Company / Business Name</label>
+                <input type="text" id="quote-company" name="company" placeholder="Your Business Name">
+            </div>
 
-                <button type="submit" class="btn-submit">Submit Quote Request</button>
-            </form>
+            <div class="form-group">
+                <label for="quote-service">Service Required *</label>
+                <select id="quote-service" name="service" required style="padding: 12px; background-color: var(--bg-dark); border: 1px solid var(--border-dark); border-radius: 6px; font-size: 1rem; color: var(--text-white); width: 100%;">
+                    <option value="" disabled selected>Select a Service</option>
+                    <option value="SEO & Search Marketing">SEO & Search Marketing</option>
+                    <option value="Branding & Creative Design">Branding & Creative Design</option>
+                    <option value="Google & Paid Advertising">Google & Paid Advertising</option>
+                    <option value="Performance Marketing">Performance Marketing</option>
+                    <option value="Social Media Optimisation">Social Media Optimisation</option>
+                    <option value="Full Package / Other">Full Marketing Package</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="quote-budget">Estimated Monthly Budget *</label>
+                <select id="quote-budget" name="budget" required style="padding: 12px; background-color: var(--bg-dark); border: 1px solid var(--border-dark); border-radius: 6px; font-size: 1rem; color: var(--text-white); width: 100%;">
+                    <option value="" disabled selected>Select Budget Range</option>
+                    <option value="Under ₹25,000 / month">Under ₹25,000 / month</option>
+                    <option value="₹25,000 - ₹50,000 / month">₹25,000 - ₹50,000 / month</option>
+                    <option value="₹50,000 - ₹1,000,000 / month">₹50,000 - ₹1,00,000 / month</option>
+                    <option value="₹1,00,000+ / month">₹1,00,000+ / month</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="quote-details">Project Details / Specific Goals *</label>
+                <textarea id="quote-details" name="project_details" rows="5" placeholder="Share key details about your business goals, target market, or current website URL..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-green full-width-btn">Submit Quote Request</button>
+        </form>
+
+        <div class="contact-info">
+            <p><strong>📞 Phone:</strong> +91 00000 00000</p>
+            <p><strong>📍 Location:</strong> 201, 2nd Floor, Manjeera Square, Opp: to Aster Prime Hospital, Mythrivanam, Hyderabad, Telangana 500038</p>
         </div>
-
-    </div>
+    </section>
 
     <!-- Footer -->
     <footer>
