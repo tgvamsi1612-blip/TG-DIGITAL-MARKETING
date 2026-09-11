@@ -205,21 +205,38 @@
         © COPYRIGHT 2026 TG DIGITALMARKETING.IN ALL RIGHTS RESERVED.
     </footer>
 <!-- Campaign Popup Modal -->
-<div id="campaignModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); z-index: 9999; justify-content: center; align-items: center;">
-    <div style="background: #0d1b2a; border: 1px solid #1f3a5f; padding: 30px; border-radius: 10px; max-width: 420px; width: 90%; text-align: center; position: relative;">
+<div id="campaignModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.85); z-index: 9999; align-items: center; justify-content: center;">
+    <div style="background: #0a192f; border: 1px solid #1e293b; padding: 30px; border-radius: 12px; max-width: 450px; width: 90%; text-align: center; position: relative; box-shadow: 0 10px 25px rgba(0,0,0,0.5);">
         
-        <!-- Close Button (Direct Inline Click Handler) -->
-        <span onclick="document.getElementById('campaignModal').style.display='none';" style="position: absolute; top: 12px; right: 18px; font-size: 24px; color: #ffffff; cursor: pointer; font-weight: bold; line-height: 1;">&times;</span>
+        <!-- Close Button -->
+        <button type="button" onclick="closeModalPopup()" style="position: absolute; top: 10px; right: 12px; background: none; border: none; color: #ffffff; font-size: 28px; font-weight: bold; cursor: pointer; z-index: 10000; line-height: 1; padding: 5px 10px;">&times;</button>
         
-        <h2 style="color: #ffffff; font-size: 1.5rem; margin-top: 10px; margin-bottom: 12px;">🚀 Want Low Fee!</h2>
-        <p style="color: #d1d5db; font-size: 0.95rem; margin-bottom: 20px; line-height: 1.4;">ADMISSIONS OPEN FOR PARAMEDICAL IN AUDISANAKRA UNIVERSITY.</p>
-        <a href="quote.html" class="btn-green" style="display: block; text-decoration: none; padding: 12px; text-align: center; border-radius: 6px; font-weight: bold;">Get Free Consultation</a>
+        <h3 style="color: #8cc63f; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-top: 5px; margin-bottom: 8px; font-weight: 700;">Audisankara University</h3>
+        
+        <h2 style="color: #ffffff; font-size: 1.4rem; margin-bottom: 12px; line-height: 1.2;">🏥 ADMISSIONS OPEN 2026–27</h2>
+        
+        <p style="color: #94a3b8; font-size: 0.95rem; margin-bottom: 15px; line-height: 1.4;">
+            Shape Your Future in Healthcare with <strong style="color: #ffffff;">Paramedical & Allied Health Sciences</strong>!
+        </p>
+
+        <ul style="text-align: left; color: #d1d5db; font-size: 0.85rem; margin-bottom: 20px; padding-left: 20px; line-height: 1.6;">
+            <li><strong>Courses:</strong> B.Sc. MLT, Anesthesia, Imaging Tech, Dialysis Tech & more</li>
+            <li>State-of-the-art Labs & Hospital Training</li>
+            <li>100% Placement Support</li>
+        </ul>
+
+        <a href="quote.html" class="btn-green" style="display: block; text-decoration: none; padding: 12px; text-align: center; border-radius: 6px; font-weight: bold;">Apply Online / Enquire Now</a>
     </div>
 </div>
 
-<!-- Inline Popup Script -->
 <script>
-    // Show popup after 5 seconds
+    function closeModalPopup() {
+        var modal = document.getElementById('campaignModal');
+        if (modal) {
+            modal.style.setProperty('display', 'none', 'important');
+        }
+    }
+
     setTimeout(function() {
         var modal = document.getElementById('campaignModal');
         if (modal) {
@@ -227,12 +244,12 @@
         }
     }, 3000);
 
-    // Close modal if user clicks outside the box
-    window.onclick = function(event) {
+    window.addEventListener('click', function(e) {
         var modal = document.getElementById('campaignModal');
-        if (event.target === modal) {
-            modal.style.display = 'none';
+        if (e.target === modal) {
+            closeModalPopup();
         }
-    };
-</script></body>
+    });
+</script>
+</body>
 </html>
