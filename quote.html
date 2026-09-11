@@ -6,6 +6,39 @@
     <link rel="icon" type="image/png" href="mylogo1.png">
     <title>Request a Quote - TG Digital Marketing</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Two-Column Form Alignment */
+        .quote-form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .full-width {
+            grid-column: span 2;
+        }
+
+        .contact-form select {
+            padding: 12px;
+            background-color: var(--bg-dark);
+            border: 1px solid var(--border-dark);
+            border-radius: 6px;
+            font-size: 1rem;
+            color: var(--text-white);
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Mobile Alignment Override */
+        @media (max-width: 768px) {
+            .quote-form-grid {
+                grid-template-columns: 1fr;
+            }
+            .full-width {
+                grid-column: span 1;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -38,53 +71,55 @@
     <section class="content-section">
         <form action="https://formspree.io/f/xyeybvej" method="POST" class="contact-form">
             
-            <div class="form-group">
-                <label for="quote-name">Full Name *</label>
-                <input type="text" id="quote-name" name="name" placeholder="John Doe" required>
-            </div>
+            <div class="quote-form-grid">
+                <div class="form-group">
+                    <label for="quote-name">Full Name *</label>
+                    <input type="text" id="quote-name" name="name" placeholder="John Doe" required>
+                </div>
 
-            <div class="form-group">
-                <label for="quote-email">Email Address *</label>
-                <input type="email" id="quote-email" name="email" placeholder="john@example.com" required>
-            </div>
+                <div class="form-group">
+                    <label for="quote-email">Email Address *</label>
+                    <input type="email" id="quote-email" name="email" placeholder="john@example.com" required>
+                </div>
 
-            <div class="form-group">
-                <label for="quote-phone">Mobile / Phone Number *</label>
-                <input type="tel" id="quote-phone" name="phone" pattern="[+0-9\s\-]+" placeholder="+91 00000 00000" required>
-            </div>
+                <div class="form-group">
+                    <label for="quote-phone">Mobile / Phone Number *</label>
+                    <input type="tel" id="quote-phone" name="phone" pattern="[+0-9\s\-]+" placeholder="+91 00000 00000" required>
+                </div>
 
-            <div class="form-group">
-                <label for="quote-company">Company / Business Name</label>
-                <input type="text" id="quote-company" name="company" placeholder="Your Business Name">
-            </div>
+                <div class="form-group">
+                    <label for="quote-company">Company / Business Name</label>
+                    <input type="text" id="quote-company" name="company" placeholder="Your Business Name">
+                </div>
 
-            <div class="form-group">
-                <label for="quote-service">Service Required *</label>
-                <select id="quote-service" name="service" required style="padding: 12px; background-color: var(--bg-dark); border: 1px solid var(--border-dark); border-radius: 6px; font-size: 1rem; color: var(--text-white); width: 100%;">
-                    <option value="" disabled selected>Select a Service</option>
-                    <option value="SEO & Search Marketing">SEO & Search Marketing</option>
-                    <option value="Branding & Creative Design">Branding & Creative Design</option>
-                    <option value="Google & Paid Advertising">Google & Paid Advertising</option>
-                    <option value="Performance Marketing">Performance Marketing</option>
-                    <option value="Social Media Optimisation">Social Media Optimisation</option>
-                    <option value="Full Package / Other">Full Marketing Package</option>
-                </select>
-            </div>
+                <div class="form-group">
+                    <label for="quote-service">Service Required *</label>
+                    <select id="quote-service" name="service" required>
+                        <option value="" disabled selected>Select a Service</option>
+                        <option value="SEO & Search Marketing">SEO & Search Marketing</option>
+                        <option value="Branding & Creative Design">Branding & Creative Design</option>
+                        <option value="Google & Paid Advertising">Google & Paid Advertising</option>
+                        <option value="Performance Marketing">Performance Marketing</option>
+                        <option value="Social Media Optimisation">Social Media Optimisation</option>
+                        <option value="Full Package / Other">Full Marketing Package</option>
+                    </select>
+                </div>
 
-            <div class="form-group">
-                <label for="quote-budget">Estimated Monthly Budget *</label>
-                <select id="quote-budget" name="budget" required style="padding: 12px; background-color: var(--bg-dark); border: 1px solid var(--border-dark); border-radius: 6px; font-size: 1rem; color: var(--text-white); width: 100%;">
-                    <option value="" disabled selected>Select Budget Range</option>
-                    <option value="Under ₹25,000 / month">Under ₹25,000 / month</option>
-                    <option value="₹25,000 - ₹50,000 / month">₹25,000 - ₹50,000 / month</option>
-                    <option value="₹50,000 - ₹1,000,000 / month">₹50,000 - ₹1,00,000 / month</option>
-                    <option value="₹1,00,000+ / month">₹1,00,000+ / month</option>
-                </select>
-            </div>
+                <div class="form-group">
+                    <label for="quote-budget">Estimated Monthly Budget *</label>
+                    <select id="quote-budget" name="budget" required>
+                        <option value="" disabled selected>Select Budget Range</option>
+                        <option value="Under ₹25,000 / month">Under ₹25,000 / month</option>
+                        <option value="₹25,000 - ₹50,000 / month">₹25,000 - ₹50,000 / month</option>
+                        <option value="₹50,000 - ₹1,00,000 / month">₹50,000 - ₹1,00,000 / month</option>
+                        <option value="₹1,00,000+ / month">₹1,00,000+ / month</option>
+                    </select>
+                </div>
 
-            <div class="form-group">
-                <label for="quote-details">Project Details / Specific Goals *</label>
-                <textarea id="quote-details" name="project_details" rows="5" placeholder="Share key details about your business goals, target market, or current website URL..." required></textarea>
+                <div class="form-group full-width">
+                    <label for="quote-details">Project Details / Specific Goals *</label>
+                    <textarea id="quote-details" name="project_details" rows="5" placeholder="Share key details about your business goals, target market, or current website URL..." required></textarea>
+                </div>
             </div>
 
             <button type="submit" class="btn-green full-width-btn">Submit Quote Request</button>
