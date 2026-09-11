@@ -204,27 +204,35 @@
     <footer>
         © COPYRIGHT 2026 TG DIGITALMARKETING.IN ALL RIGHTS RESERVED.
     </footer>
-<!-- Campaign Popup -->
+<!-- Campaign Popup Modal -->
 <div id="campaignModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); z-index: 9999; justify-content: center; align-items: center;">
-    <div style="background: #0d1b2a; border: 1px solid #1f3a5f; padding: 30px; border-radius: 10px; max-width: 400px; width: 90%; text-align: center; position: relative;">
-        <span onclick="document.getElementById('campaignModal').style.display='none'" style="position: absolute; top: 10px; right: 15px; font-size: 24px; color: #fff; cursor: pointer;">&times;</span>
-        <h2 style="color: #7bb928; margin-top: 0;">🚀 Special Launch Offer</h2>
-        <p style="color: #ffffff; margin-bottom: 20px;">Get 20% off on your first Digital Marketing Campaign with us!</p>
-        <a href="quote.html" class="btn-green" style="display: block; text-decoration: none; padding: 12px; text-align: center;">Claim Discount Now</a>
+    <div style="background: #0d1b2a; border: 1px solid #1f3a5f; padding: 30px; border-radius: 10px; max-width: 420px; width: 90%; text-align: center; position: relative;">
+        
+        <!-- Close Button (Direct Inline Click Handler) -->
+        <span onclick="document.getElementById('campaignModal').style.display='none';" style="position: absolute; top: 12px; right: 18px; font-size: 24px; color: #ffffff; cursor: pointer; font-weight: bold; line-height: 1;">&times;</span>
+        
+        <h2 style="color: #ffffff; font-size: 1.5rem; margin-top: 10px; margin-bottom: 12px;">🚀 Boost Your Sales Today!</h2>
+        <p style="color: #d1d5db; font-size: 0.95rem; margin-bottom: 20px; line-height: 1.4;">Book a free 30-minute consultation with our digital marketing experts.</p>
+        <a href="quote.html" class="btn-green" style="display: block; text-decoration: none; padding: 12px; text-align: center; border-radius: 6px; font-weight: bold;">Get Free Consultation</a>
     </div>
 </div>
 
-<!-- Inline JavaScript Code -->
+<!-- Inline Popup Script -->
 <script>
-    // Show the popup 3 seconds after page loads
-    window.addEventListener('DOMContentLoaded', function() {
-        setTimeout(function() {
-            var modal = document.getElementById('campaignModal');
-            if (modal) {
-                modal.style.display = 'flex';
-            }
-        }, 3000);
-    });
-</script>
-</body>
+    // Show popup after 3 seconds
+    setTimeout(function() {
+        var modal = document.getElementById('campaignModal');
+        if (modal) {
+            modal.style.display = 'flex';
+        }
+    }, 3000);
+
+    // Close modal if user clicks outside the box
+    window.onclick = function(event) {
+        var modal = document.getElementById('campaignModal');
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    };
+</script></body>
 </html>
