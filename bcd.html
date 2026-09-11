@@ -3,38 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="mylogo1.png">
     <title>Branding & Creative Design - TG Digital Marketing</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <header class="hero" style="min-height: 40vh;">
-    <div class="main-logo">
-        <a href="index.html">
-            <img src="bcd.png" alt="Social Media Optimisation Logo" class="service-logo">
-        </a>
-    </div>
-        <nav class="navigation">
-            <a href="index.html#home">Home</a>
-            <a href="index.html#services">Services</a>
-            <a href="index.html#contact">Contact</a>
-            <a href="index.html#about">About US</a>
-        </nav>
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html#home" class="logo-link">
+                <img src="mylogo1.png" alt="TG Digital Marketing Logo" class="nav-logo">
+            </a>
+            <nav class="nav-links">
+                <a href="index.html#home">Home</a>
+                <a href="index.html#services">Services</a>
+                <a href="index.html#ourclients">Our Clients</a>
+                <a href="index.html#about">About Us</a>
+                <a href="index.html#contact">Contact</a>
+                <a href="index.html#contact" class="btn-green nav-cta">Get Started</a>
+            </nav>
+        </div>
     </header>
 
-    <main class="content-section">
-        <h2>Branding & Creative Design</h2>
-        <p>Build a distinctive identity with custom visual design, branding collateral, and digital media assets.</p>
-        <br>
-        <ul style="line-height: 2; padding-left: 20px;">
-            <li>Logo Design & Brand Identity Kits</li>
-            <li>Social Media Post & Banner Graphics</li>
-            <li>Marketing Collateral (Brochures, Cards, Flyers)</li>
-            <li>UI/UX Design for Web and Mobile</li>
-        </ul>
-        <br><br>
-        <a href="quote.html" class="btn-green" style="text-decoration: none; display: inline-block;">Request a Quote</a>
-    </main>
+    <section class="subpage-hero">
+        <img src="bcd.png" alt="Branding & Creative Design" class="service-logo">
+        <h1 class="hero-title">Branding & <span class="highlight">Creative Design</span></h1>
+        <p class="hero-description">
+            Custom graphic design and brand development tailored to establish a strong identity for your business.
+        </p>
+    </section>
+
+    <section class="content-section">
+        <h2 class="section-title">Design Solutions</h2>
+        <div class="services-grid">
+            <div class="card">
+                <h3>Logo & Brand Identity</h3>
+                <p>Unique logos, color palettes, and visual guidelines for your brand.</p>
+            </div>
+            <div class="card">
+                <h3>Social Graphics</h3>
+                <p>Custom social media banners, post designs, and story templates.</p>
+            </div>
+            <div class="card">
+                <h3>Marketing Collateral</h3>
+                <p>Flyers, brochures, business cards, and digital presentation decks.</p>
+            </div>
+            <div class="card">
+                <h3>UI/UX Layouts</h3>
+                <p>Clean and user-friendly interface designs for modern websites.</p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="index.html#contact" class="btn-green">Get Started with Branding</a>
+        </div>
+    </section>
 
     <footer>
         © COPYRIGHT 2026 TG DIGITALMARKETING.IN ALL RIGHTS RESERVED.
