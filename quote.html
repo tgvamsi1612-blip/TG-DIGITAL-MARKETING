@@ -6,6 +6,10 @@
     <link rel="icon" type="image/png" href="mylogo1.png">
     <title>Request a Quote & Payment - TG Digital Marketing</title>
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- Razorpay Checkout Script -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
     <style>
         .quote-form-grid {
             display: grid;
@@ -125,7 +129,7 @@
 
     <!-- Quote Form Section -->
     <section class="content-section">
-        <form action="https://formspree.io/f/xyeybvej" method="POST" class="contact-form">
+        <form id="quoteForm" action="https://formspree.io/f/xyeybvej" method="POST" class="contact-form">
             
             <div class="quote-form-grid">
                 <div class="form-group">
@@ -178,7 +182,7 @@
                 </div>
             </div>
 
-            <!-- ADVANCE PAYMENT SECTION BELOW QUOTE -->
+            <!-- ADVANCE PAYMENT SECTION -->
             <div class="payment-section">
                 <h3 class="payment-title">💳 Advance Payment (Optional)</h3>
                 
@@ -225,6 +229,45 @@
     <footer>
         © COPYRIGHT 2026 TG DIGITALMARKETING.IN ALL RIGHTS RESERVED.
     </footer>
+
+    <!-- Payment Gateway Script Handler -->
+    <script>
+        document.getElementById('quoteForm').addEventListener('submit', function (e) {
+            const amountInput = document.getElementById('advance-amount').value;
+
+            // If an advance amount was entered, launch Razorpay Gateway
+            if (amountInput && amountInput > 0) {
+                e.preventDefault(); // Stop instant standard form submit
+
+                const amountInPaise = amountInput * 100; // Razorpay processes values in Paise
+
+                const options = {
+                    "key": "rzp_live_TaeNuktzoXuFEk", // Replace with your Razorpay Key ID
+                    "amount": amountInPaise,
+                    "currency": "INR",
+                    "name": "TG Digital Marketing",
+                    "description": "Advance Project Deposit",
+                    "image": "mylogo1.png",
+                    "handler": function (response) {
+                        alert("Payment Successful! Payment ID: " + response.razorpay_payment_id);
+                        // Submit form to Formspree after payment success
+                        document.getElementById('quoteForm').submit();
+                    },
+                    "prefill": {
+                        "name": document.getElementById('quote-name').value,
+                        "email": document.getElementById('quote-email').value,
+                        "contact": document.getElementById('quote-phone').value
+                    },
+                    "theme": {
+                        "color": "#7bb928" // Matches green accent
+                    }
+                };
+
+                const rzp1 = new Razorpay(options);
+                rzp1.open();
+            }
+        });
+    </script>
 
 </body>
 </html>
