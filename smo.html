@@ -3,39 +3,257 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="mylogo1.png">
-    <title>Social Media Optimisation - TG Digital Marketing</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Social Media Optimization - TG Digital Marketing</title>
+    <link rel="icon" href="mylogo1.png" type="image/png">
+    
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0b132b; /* Deep Navy Background */
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* Header / Navbar */
+        header {
+            background-color: #1c2541;
+            padding: 15px 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo-link img {
+            height: 45px;
+            width: auto;
+            display: block;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #70e000;
+        }
+
+        .btn-get-started {
+            background-color: #70e000;
+            color: #0b132b !important;
+            padding: 8px 18px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .btn-get-started:hover {
+            background-color: #5bb300;
+        }
+
+        /* Hero Section (With Image Fix) */
+        .hero {
+            text-align: center;
+            padding: 60px 20px 40px;
+            background-color: #0b132b;
+        }
+
+        .hero-img {
+            width: 100%;
+            max-width: 280px; /* Perfectly sized: noticeable but not full screen */
+            height: auto;
+            display: block;
+            margin: 0 auto 25px auto;
+            border-radius: 12px;
+            /* White glow/shadow effect to stop image blending into dark bg */
+            filter: drop-shadow(0px 8px 25px rgba(255, 255, 255, 0.15)) drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.5));
+            transition: transform 0.3s ease;
+        }
+
+        .hero-img:hover {
+            transform: scale(1.03);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .hero h1 span {
+            color: #70e000; /* Highlight color */
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: 0 auto;
+            color: #c0c6d4;
+            font-size: 1.1rem;
+        }
+
+        /* Service Cards Section */
+        .services-section {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .services-section h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: #ffffff;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #1c2541;
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px solid #2a385b;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #70e000;
+        }
+
+        .card h3 {
+            color: #70e000;
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #c0c6d4;
+            font-size: 0.95rem;
+        }
+
+        /* Quote Section (Below Cards) */
+        .quote-section {
+            background-color: #1c2541;
+            border-left: 5px solid #70e000;
+            max-width: 850px;
+            margin: 50px auto 30px auto;
+            padding: 30px 40px;
+            border-radius: 8px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .quote-section blockquote {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: #ffffff;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .quote-section cite {
+            display: block;
+            font-size: 0.95rem;
+            font-weight: bold;
+            color: #70e000;
+            font-style: normal;
+        }
+
+        /* Action Call to Action Button */
+        .cta-container {
+            text-align: center;
+            margin: 35px 0 60px 0;
+        }
+
+        .btn-action {
+            display: inline-block;
+            background-color: #70e000;
+            color: #0b132b;
+            padding: 12px 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .btn-action:hover {
+            background-color: #5bb300;
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #070b19;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.85rem;
+            color: #7a8296;
+            border-top: 1px solid #1c2541;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .quote-section { padding: 20px; }
+            .hero-img { max-width: 220px; }
+        }
+    </style>
 </head>
 <body>
 
-    <header class="navbar">
+    <!-- Header Navigation -->
+    <header>
         <div class="nav-container">
             <a href="index.html#home" class="logo-link">
-                <img src="mylogo1.png" alt="TG Digital Marketing Logo" class="nav-logo">
+                <img src="mylogo1.png" alt="TG Digital Marketing Logo">
             </a>
-            <nav class="nav-links">
+            <nav>
                 <a href="index.html#home">Home</a>
                 <a href="index.html#services">Services</a>
                 <a href="index.html#ourclients">Our Clients</a>
                 <a href="index.html#about">About Us</a>
                 <a href="index.html#contact">Contact</a>
-                <a href="index.html#contact" class="btn-green nav-cta">Get Started</a>
+                <a href="index.html#contact" class="btn-get-started">Get Started</a>
             </nav>
         </div>
     </header>
 
-    <section class="subpage-hero">
-        <img src="smo.png" alt="Social Media Optimization" class="service-logo">
-        <h1 class="hero-title">Social Media <span class="highlight">Optimisation</span></h1>
-        <p class="hero-description">
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="smo.png" alt="Social Media Optimization" class="hero-img">
+        <h1>Social Media <span>Optimisation</span></h1>
+        <p>
             Enhance your brand visibility, engagement, and organic community reach across all social channels.
         </p>
     </section>
 
-    <section class="content-section">
-        <h2 class="section-title">SMO Services</h2>
-        <div class="services-grid">
+    <!-- SMO Services Cards -->
+    <section class="services-section">
+        <h2>SMO Services</h2>
+        <div class="cards-grid">
             <div class="card">
                 <h3>Profile Optimization</h3>
                 <p>Professional setup and bio keyword tuning for Instagram, Facebook, and LinkedIn.</p>
@@ -54,11 +272,21 @@
             </div>
         </div>
 
-        <div style="text-align: center; margin-top: 40px;">
-            <a href="index.html#contact" class="btn-green">Grow Your Social Media</a>
+        <!-- Quote Section Below Cards -->
+        <div class="quote-section">
+            <blockquote>
+                "Social media is not just an activity; it is an investment of valuable time and resources. Build connections, share value, and your community will grow naturally."
+            </blockquote>
+            <cite>— TG Digital Marketing</cite>
+        </div>
+
+        <!-- CTA Link -->
+        <div class="cta-container">
+            <a href="index.html#contact" class="btn-action">Grow Your Social Media</a>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         © COPYRIGHT 2026 TG DIGITALMARKETING.IN ALL RIGHTS RESERVED.
     </footer>
