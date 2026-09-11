@@ -21,7 +21,7 @@
             line-height: 1.6;
         }
 
-        /* Header / Navbar */
+        /* Header Navigation */
         header {
             background-color: #1c2541;
             padding: 15px 5%;
@@ -71,16 +71,14 @@
             background-color: #5bb300;
         }
 
-        /* Page Content Wrapper */
+        /* Container Alignment */
         .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 60px 20px;
+            max-width: 800px;
+            margin: 40px auto 80px auto;
+            padding: 0 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            min-height: 80vh;
         }
 
         /* Centered Quote Section */
@@ -88,72 +86,108 @@
             background-color: #1c2541;
             border-left: 5px solid #70e000;
             width: 100%;
-            max-width: 750px;
-            margin: 0 auto 40px auto;
-            padding: 35px 40px;
+            margin-bottom: 35px;
+            padding: 30px 35px;
             border-radius: 8px;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
             text-align: center;
         }
 
         .quote-section blockquote {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             font-style: italic;
             color: #ffffff;
             line-height: 1.7;
             margin-bottom: 15px;
-            text-align: center;
         }
 
         .quote-section cite {
             display: block;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: bold;
             color: #70e000;
             font-style: normal;
-            text-align: center;
         }
 
-        /* Centered Contact / Details Card */
-        .contact-card {
+        /* Form Container */
+        .quote-form-card {
             background-color: #1c2541;
             padding: 40px;
             border-radius: 10px;
             width: 100%;
-            max-width: 750px;
             border: 1px solid #2a385b;
-            text-align: center;
-            margin: 0 auto;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
         }
 
-        .contact-card h2 {
+        .quote-form-card h2 {
             color: #70e000;
             font-size: 2rem;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
-        .contact-card p {
+        .quote-form-card p {
             color: #c0c6d4;
-            margin-bottom: 25px;
-            font-size: 1.05rem;
+            margin-bottom: 30px;
         }
 
-        .cta-btn {
-            display: inline-block;
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #ffffff;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #2a385b;
+            background-color: #0b132b;
+            color: #ffffff;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #70e000;
+        }
+
+        /* Grid for side-by-side inputs */
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .btn-submit {
             background-color: #70e000;
             color: #0b132b;
-            padding: 12px 30px;
+            padding: 14px 35px;
             font-size: 1rem;
             font-weight: bold;
-            text-decoration: none;
+            border: none;
             border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
             transition: background-color 0.3s, transform 0.2s;
         }
 
-        .cta-btn:hover {
+        .btn-submit:hover {
             background-color: #5bb300;
-            transform: scale(1.05);
+            transform: translateY(-2px);
         }
 
         /* Footer */
@@ -167,15 +201,9 @@
         }
 
         @media (max-width: 768px) {
-            .quote-section, .contact-card {
-                padding: 25px;
-            }
-            .quote-section blockquote {
-                font-size: 1.1rem;
-            }
-            .logo-link img {
-                height: 26px;
-            }
+            .form-row { grid-template-columns: 1fr; }
+            .quote-form-card { padding: 25px; }
+            .logo-link img { height: 26px; }
         }
     </style>
 </head>
@@ -198,7 +226,7 @@
         </div>
     </header>
 
-    <!-- Centered Content Wrapper -->
+    <!-- Main Container -->
     <div class="container">
         
         <!-- Centered Quote Box -->
@@ -209,11 +237,72 @@
             <cite>— TG Digital Marketing</cite>
         </div>
 
-        <!-- Centered Contact Section -->
-        <div id="contact" class="contact-card">
-            <h2>Request a Custom Quote</h2>
-            <p>Ready to scale your business? Get in touch with our team to receive a personalized digital marketing strategy tailored to your business goals.</p>
-            <a href="index.html#contact" class="cta-btn">Contact Us Today</a>
+        <!-- Quote Form with Budget & Preferred Payment Mode -->
+        <div id="contact" class="quote-form-card">
+            <h2>Request Your Customized Quote</h2>
+            <p>Fill in your details, budget, and payment preference below to receive a personalized proposal.</p>
+            
+            <form action="#" method="POST">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="fullname">Full Name</label>
+                        <input type="text" id="fullname" name="fullname" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter your mobile number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Select Service</label>
+                        <select id="service" name="service" required>
+                            <option value="" disabled selected>Select a service</option>
+                            <option value="smo">Social Media Optimization (SMO)</option>
+                            <option value="seo">Search Engine Optimization (SEO)</option>
+                            <option value="gpa">Google PPC & Ads</option>
+                            <option value="bcd">Branding & Creative Design</option>
+                            <option value="pm">Performance Marketing</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Budget & Payment Mode Row -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="budget">Let us know your Budget</label>
+                        <select id="budget" name="budget" required>
+                            <option value="" disabled selected>Select your budget range</option>
+                            <option value="below-15k">Under ₹15,000 / month</option>
+                            <option value="15k-30k">₹15,000 - ₹30,000 / month</option>
+                            <option value="30k-50k">₹30,000 - ₹50,000 / month</option>
+                            <option value="50k-plus">₹50,000+ / month</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="payment-mode">Preferred Payment Mode</label>
+                        <select id="payment-mode" name="payment_mode" required>
+                            <option value="" disabled selected>Select Payment Option</option>
+                            <option value="upi">UPI (GPay / PhonePe / Paytm)</option>
+                            <option value="card">Credit / Debit Card</option>
+                            <option value="netbanking">Net Banking</option>
+                            <option value="wire">Bank Wire Transfer</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Project Requirements / Notes</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Briefly describe your goals or requirements..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Submit Quote Request</button>
+            </form>
         </div>
 
     </div>
