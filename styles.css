@@ -343,3 +343,13 @@ footer {
         display: none;
     }
 }
+
+/* Ensure header logo dimensions and display match smo.html */
+.logo-link img,
+header .logo {
+    height: 45px;
+    width: auto;
+    max-height: 45px;
+    display: block;
+    object-fit: contain;
+}
