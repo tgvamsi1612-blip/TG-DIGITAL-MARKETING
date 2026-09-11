@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="mylogo1.png">
-    <title>Request a Quote - TG Digital Marketing</title>
+    <title>Request a Quote & Payment - TG Digital Marketing</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Two-Column Form Alignment */
         .quote-form-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -43,7 +42,50 @@
             resize: vertical;
         }
 
-        /* Mobile Alignment Override */
+        /* Advance Payment Section Styling */
+        .payment-section {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border-dark);
+        }
+
+        .payment-title {
+            color: var(--accent-green);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .payment-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .payment-card {
+            background-color: var(--bg-dark);
+            border: 1px solid var(--border-dark);
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            cursor: pointer;
+            transition: border-color 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .payment-card:hover,
+        .payment-card input[type="radio"]:checked + span {
+            color: var(--accent-green);
+        }
+
+        .payment-card input[type="radio"] {
+            width: auto !important;
+            accent-color: var(--accent-green);
+        }
+
         @media (max-width: 768px) {
             .quote-form-grid {
                 grid-template-columns: 1fr;
@@ -136,7 +178,41 @@
                 </div>
             </div>
 
-            <button type="submit" class="btn-green full-width-btn">Submit Quote Request</button>
+            <!-- ADVANCE PAYMENT SECTION BELOW QUOTE -->
+            <div class="payment-section">
+                <h3 class="payment-title">💳 Advance Payment (Optional)</h3>
+                
+                <div class="quote-form-grid">
+                    <div class="form-group full-width">
+                        <label for="advance-amount">Advance Amount (₹1 to ₹10,00,000)</label>
+                        <input type="number" id="advance-amount" name="advance_amount" min="1" max="1000000" placeholder="Enter amount in ₹ (e.g. 5000)">
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label>Preferred Payment Method</label>
+                        <div class="payment-options">
+                            <label class="payment-card">
+                                <input type="radio" name="payment_method" value="UPI / GPay / PhonePe" checked>
+                                <span>📱 UPI / PhonePe / GPay</span>
+                            </label>
+                            <label class="payment-card">
+                                <input type="radio" name="payment_method" value="QR Code Scan">
+                                <span>📷 Scan QR Code</span>
+                            </label>
+                            <label class="payment-card">
+                                <input type="radio" name="payment_method" value="Credit / Debit Card">
+                                <span>💳 Credit / Debit Card</span>
+                            </label>
+                            <label class="payment-card">
+                                <input type="radio" name="payment_method" value="Net Banking">
+                                <span>🏦 Net Banking</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-green full-width-btn">Submit Quote & Proceed</button>
         </form>
 
         <div class="contact-info">
